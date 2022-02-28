@@ -1,5 +1,6 @@
 # First, load you model and allocate the tensors
 import tensorflow.lite as tflite
+# import tflite_runtime.interpreter as tflite
 # Load TFLite model and allocate tensors.
 interpreter = tflite.Interpreter(model_path='model.tflite')
 #allocate the tensors
@@ -12,7 +13,7 @@ output_details = interpreter.get_output_details()
 import cv2
 import numpy as np
 import imghdr
-image_path='sunflower.jpeg'
+image_path='daisy.jpeg'
 if imghdr.what(image_path) not in ["jpeg", "jpg", "png"]:
     print("quiting the program")
 img = cv2.imread(image_path)
